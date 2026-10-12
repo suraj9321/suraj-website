@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Suraj Sah</title>
+  <meta name="description" content="Suraj Sah — software engineer at Salesforce. Distributed systems, backend platforms, and AI agentic systems. Previously Rivian, Mastercard, Airbus.">
+  <meta property="og:title" content="Suraj Sah">
+  <meta property="og:description" content="Software engineer at Salesforce. Distributed systems, backend platforms, and AI agentic systems.">
+  <meta property="og:image" content="assets/suraj.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="nav-name" href="#top">Suraj Sah</a>
+  <nav class="nav-links" aria-label="Contact">
+    <a href="https://github.com/suraj9321">GitHub</a>
+    <a href="https://linkedin.com/in/surajsahiitkgp">LinkedIn</a>
+    <a href="mailto:suraj9321@gmail.com">Email</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <svg class="signal" viewBox="0 0 1200 160" preserveAspectRatio="none" aria-hidden="true">
+      <path id="trace" d="" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+    </svg>
+
+    <div class="hero-grid">
+      <div class="hero-text">
+        <h1>Suraj Sah</h1>
+        <p class="lede">Software engineer at Salesforce. Distributed systems, backend platforms, and — lately — AI agentic systems.</p>
+
+        <div class="about">
+          <p>At Salesforce I build messaging platforms on Customer 360: the tools marketers from small businesses to enterprises use to reach their audience. It is a front-row seat to how hard it is for brands to cut through the noise.</p>
+          <p>Before that, I worked on perception software for Rivian's self-driving stack, built secure financial APIs and microservices at Mastercard that serve more than 250 banks, and trained deep-learning models to classify aerospace patents at Airbus. Different industries, same job: find the signal in the data.</p>
+          <p>Right now I'm building agentic AI systems, which I think are the next frontier of software.</p>
+        </div>
+      </div>
+
+      <figure class="portrait">
+        <img src="assets/suraj.jpg" alt="Suraj Sah in front of the Lower Manhattan skyline" width="800" height="800">
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Experience</h2>
+    <ol class="timeline">
+      <li>
+        <div class="when">Dec 2023 – present</div>
+        <div class="what">
+          <h3>Salesforce <span class="role">Software Development Engineer, Bellevue</span></h3>
+          <p class="stack">Java, Spring, JavaScript, Lightning Web Components</p>
+          <ul>
+            <li>Led the Test Send capability for Marketing Cloud Engagement's messaging APIs, wiring CreateSendDefinition, SendPush and GetSendStatus end to end.</li>
+            <li>Replaced blocking Apex calls with a UI polling mechanism, eliminating timeouts on high-volume push sends.</li>
+            <li>Built a DataKit installation check on Connect APIs so customers see broken Data Streams and Calculated Insights before setup fails.</li>
+            <li>Shipped the C2C developer page now used across teams to configure and onboard messaging services; wrote the troubleshooting guide for Core-MCE tenant provisioning after tracing root causes in Splunk.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">Jan 2023 – Dec 2023</div>
+        <div class="what">
+          <h3>Rivian <span class="role">Software Development Engineer, Palo Alto</span></h3>
+          <p class="stack">C++, Python, Bazel, CMake, Docker, Jenkins</p>
+          <ul>
+            <li>Designed the camera-calibration system for autonomous-driving sensors and parallelised it so vehicles calibrate on the factory line in a fraction of the time.</li>
+            <li>Wrote time-sensitive multithreaded services with unit and integration coverage, working with QA on regression for every release.</li>
+            <li>Packaged flash images with Docker, set up remote-access test benches, and built Jenkins/EC2 pipelines for automated builds and deploys.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">Jun 2019 – Aug 2021</div>
+        <div class="what">
+          <h3>Mastercard <span class="role">Software Development Engineer, India</span></h3>
+          <p class="stack">Java, Spring Boot, Hibernate, Kafka, Oracle</p>
+          <ul>
+            <li>Built services for the global corporate-card transaction platform used by 250+ banks.</li>
+            <li>Drove the monolith-to-microservices migration: Maven/Gradle builds, WebSphere MQ and Axon (Kafka) for inter-service messaging, Flyway migrations, Swagger APIs.</li>
+            <li>Introduced TDD and REST design conventions on the team; owned Splunk monitoring and on-call response for production.</li>
+          </ul>
+        </div>
+      </li>
+      <li>
+        <div class="when">May – Jul 2018</div>
+        <div class="what">
+          <h3>Airbus Engineering Centre <span class="role">Deep Learning Intern, India</span></h3>
+          <p class="stack">Python, Keras</p>
+          <ul>
+            <li>Built an anomaly-detection model over flight time-series data (SVMs and decision trees, 0.76 accuracy) to flag critical deviations.</li>
+            <li>Trained a CNN patent classifier for five Flight Physics subclasses at 0.86 accuracy, beating the previous LSTM model and speeding up patent processing.</li>
+          </ul>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="section" id="projects">
+    <h2>Projects</h2>
+    <ul class="projects">
+      <li>
+        <div class="proj-head">
+          <h3><a href="https://github.com/suraj9321/dhan-api-backtest-options-framework">Nifty options backtesting framework</a></h3>
+          <span class="meta">Python</span>
+        </div>
+        <p>End-to-end quant research stack for systematic Nifty option selling: an event-driven backtester, volatility and variance-risk-premium signals, and a DhanHQ market-data pipeline.</p>
+      </li>
+      <li>
+        <div class="proj-head">
+          <h3><a href="https://github.com/suraj9321/MomentumWeeklyInvesting">Momentum weekly investing</a></h3>
+          <span class="meta">Java</span>
+        </div>
+        <p>Selects a portfolio of stocks showing price momentum and rebalances it at the end of every week.</p>
+      </li>
+      <li>
+        <div class="proj-head">
+          <h3>Distributed protocols in Go</h3>
+          <span class="meta">Go</span>
+        </div>
+        <p>A fault-tolerant MapReduce library over RPC, the Chandy-Lamport distributed snapshot on a token-passing system, and Raft leader election with a replicated key/value store.</p>
+      </li>
+      <li>
+        <div class="proj-head">
+          <h3>Pintos: priority scheduling and MLFQS</h3>
+          <span class="meta">C</span>
+        </div>
+        <p>Priority scheduling with nested priority donation for locks, plus the multi-level feedback queue scheduler using fixed-point math over nice and recent-CPU values.</p>
+      </li>
+      <li>
+        <div class="proj-head">
+          <h3>Cryptography and return-to-libc</h3>
+          <span class="meta">Python, C</span>
+        </div>
+        <p>Benchmarked symmetric and asymmetric ciphers, then exploited a buffer overflow on a non-executable stack by chaining into libc's <code>system()</code>.</p>
+      </li>
+      <li>
+        <div class="proj-head">
+          <h3><a href="https://patents.google.com/patent/US20210383358A1">Patent: secure card-based transactions</a></h3>
+          <span class="meta">US20210383358A1</span>
+        </div>
+        <p>A transaction card with an embedded piezoelectric chip that only allows data exchange with a terminal when a deliberate tap produces a pulse above threshold.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>Java, Python, C, C++, Go, JavaScript, TypeScript, SQL</dd>
+      <dt>Frameworks</dt><dd>Spring, Spring Boot, Hibernate / JPA, Flask, Nest.js, LangGraph</dd>
+      <dt>Systems</dt><dd>REST, Kafka, Docker, Node.js, POSIX, Bazel, CMake, shell</dd>
+      <dt>Tooling</dt><dd>Git, CI/CD, Jenkins, Splunk, SonarQube, IntelliJ, VS Code</dd>
+    </dl>
+  </section>
+
+  <section class="section" id="education">
+    <h2>Education</h2>
+    <ul class="edu">
+      <li><strong>University at Buffalo, SUNY</strong><span>MS, Computer Science</span><span class="meta">2021 – 2022</span></li>
+      <li><strong>IIT Kharagpur</strong><span>B.Tech and M.Tech, Electrical Engineering</span><span class="meta">2014 – 2019</span></li>
+    </ul>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Get in touch</h2>
+    <p>The fastest way is email. I'm also on LinkedIn and GitHub.</p>
+    <p class="contact-links">
+      <a href="mailto:suraj9321@gmail.com">suraj9321@gmail.com</a>
+      <a href="https://linkedin.com/in/surajsahiitkgp">linkedin.com/in/surajsahiitkgp</a>
+      <a href="https://github.com/suraj9321">github.com/suraj9321</a>
+    </p>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <span>Suraj Sah</span>
+  <button type="button" class="theme" id="theme" aria-label="Toggle dark mode">Dark mode</button>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
