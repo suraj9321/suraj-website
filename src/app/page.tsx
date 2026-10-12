@@ -50,7 +50,7 @@ export default function Homepage() {
               </Link>
             </div>
             {/* Where I've worked */}
-            <div className="w-full hidden lg:flex items-center gap-3 pt-2">
+            <div className="w-full flex flex-wrap items-center gap-3 pt-2">
               {experience.map((job) => (
                 <div
                   key={job.company}
