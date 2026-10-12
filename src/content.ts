@@ -1,5 +1,6 @@
 export const profile = {
   name: "Suraj Sah",
+  headline: "Building systems that find the signal in the noise.",
   lede: "Software engineer at Salesforce. Distributed systems, backend platforms, and — lately — AI agentic systems.",
   about: [
     "At Salesforce I build messaging platforms on Customer 360: the tools marketers from small businesses to enterprises use to reach their audience. It is a front-row seat to how hard it is for brands to cut through the noise.",
@@ -16,6 +17,8 @@ export type Job = {
   role: string;
   when: string;
   stack: string;
+  /** One line for the timeline card. */
+  summary: string;
   bullets: string[];
 };
 
@@ -25,6 +28,8 @@ export const experience: Job[] = [
     role: "Software Development Engineer, Bellevue",
     when: "Dec 2023 – present",
     stack: "Java, Spring, JavaScript, Lightning Web Components",
+    summary:
+      "Messaging platforms on Customer 360: Test Send APIs for Marketing Cloud Engagement, a polling layer that ended push-send timeouts, and the C2C developer page teams use to onboard messaging services.",
     bullets: [
       "Led the Test Send capability for Marketing Cloud Engagement's messaging APIs, wiring CreateSendDefinition, SendPush and GetSendStatus end to end.",
       "Replaced blocking Apex calls with a UI polling mechanism, eliminating timeouts on high-volume push sends.",
@@ -37,6 +42,8 @@ export const experience: Job[] = [
     role: "Software Development Engineer, Palo Alto",
     when: "Jan 2023 – Dec 2023",
     stack: "C++, Python, Bazel, CMake, Docker, Jenkins",
+    summary:
+      "Camera-calibration system for autonomous-driving sensors, parallelised to cut factory-line time; multithreaded C++ services, Docker-packaged flash images, Jenkins/EC2 pipelines.",
     bullets: [
       "Designed the camera-calibration system for autonomous-driving sensors and parallelised it so vehicles calibrate on the factory line in a fraction of the time.",
       "Wrote time-sensitive multithreaded services with unit and integration coverage, working with QA on regression for every release.",
@@ -48,6 +55,8 @@ export const experience: Job[] = [
     role: "Software Development Engineer, India",
     when: "Jun 2019 – Aug 2021",
     stack: "Java, Spring Boot, Hibernate, Kafka, Oracle",
+    summary:
+      "Corporate-card transaction platform serving 250+ banks; drove the monolith-to-microservices migration with Kafka messaging, Flyway and Swagger, and owned production monitoring on Splunk.",
     bullets: [
       "Built services for the global corporate-card transaction platform used by 250+ banks.",
       "Drove the monolith-to-microservices migration: Maven/Gradle builds, WebSphere MQ and Axon (Kafka) for inter-service messaging, Flyway migrations, Swagger APIs.",
@@ -59,6 +68,8 @@ export const experience: Job[] = [
     role: "Deep Learning Intern, India",
     when: "May – Jul 2018",
     stack: "Python, Keras",
+    summary:
+      "Anomaly detection over flight time-series data and a CNN patent classifier (0.86 accuracy) that beat the previous LSTM model.",
     bullets: [
       "Built an anomaly-detection model over flight time-series data (SVMs and decision trees, 0.76 accuracy) to flag critical deviations.",
       "Trained a CNN patent classifier for five Flight Physics subclasses at 0.86 accuracy, beating the previous LSTM model and speeding up patent processing.",
@@ -142,11 +153,38 @@ export const education = [
   { school: "IIT Kharagpur", degree: "B.Tech and M.Tech, Electrical Engineering", when: "2014 – 2019" },
 ];
 
-export const sections = [
-  { id: "experience", label: "Experience" },
-  { id: "patents", label: "Patents" },
-  { id: "projects", label: "Projects" },
-  { id: "skills", label: "Skills" },
-  { id: "education", label: "Education" },
-  { id: "contact", label: "Contact" },
+// Flat list for the skill chips on the About page.
+export const skillChips = skills.flatMap(([, list]) => list.split(",").map((s) => s.trim()));
+
+export type PortfolioItem = {
+  kind: "Project" | "Patent";
+  title: string;
+  desc: string;
+  meta: string;
+  href?: string;
+  cta: string;
+  /** Tailwind gradient stops for the panel. */
+  color: string;
+};
+
+// Panels for the horizontal-scroll Portfolio page: the patent leads, then projects.
+export const portfolio: PortfolioItem[] = [
+  {
+    kind: "Patent",
+    title: patents[0].title,
+    desc: patents[0].blurb,
+    meta: `${patents[0].assignee} · ${patents[0].number} · ${patents[0].when}`,
+    href: patents[0].href,
+    cta: "Read the patent",
+    color: "from-red-300 to-blue-300",
+  },
+  ...projects.map((p, i) => ({
+    kind: "Project" as const,
+    title: p.title,
+    desc: p.points ? `${p.blurb} ${p.points[0]}` : p.blurb,
+    meta: p.meta,
+    href: p.href,
+    cta: "See on GitHub",
+    color: ["from-blue-300 to-violet-300", "from-violet-300 to-purple-300", "from-purple-300 to-red-300", "from-red-300 to-blue-300"][i % 4],
+  })),
 ];

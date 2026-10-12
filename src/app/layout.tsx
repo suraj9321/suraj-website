@@ -1,16 +1,10 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque } from "next/font/google";
+import { Inter } from "next/font/google";
 import "./globals.css";
-import Motion from "@/components/Motion";
-import Nav from "@/components/Nav";
-import ThemeToggle from "@/components/ThemeToggle";
+import TransitionProvider from "@/components/TransitionProvider";
 import { profile } from "@/content";
 
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
-  subsets: ["latin"],
-  axes: ["opsz", "wdth"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://suraj-kgp-ub.vercel.app"),
@@ -25,24 +19,11 @@ export const metadata: Metadata = {
   },
 };
 
-// Applies a saved theme before first paint so the page never flashes the wrong colours.
-const themeScript = `try{var t=localStorage.getItem('theme');if(t==='dark'||t==='light')document.documentElement.setAttribute('data-theme',t)}catch(e){}`;
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={bricolage.variable}>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
-      <body>
-        <Motion>
-          <Nav />
-          {children}
-          <footer className="foot">
-            <span>{profile.name}</span>
-            <ThemeToggle />
-          </footer>
-        </Motion>
+    <html lang="en">
+      <body className={`${inter.className} bg-linear-to-r from-blue-100 to-red-200 text-black`}>
+        <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>
   );
