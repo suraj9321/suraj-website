@@ -27,7 +27,7 @@ export default function AboutPage() {
           <div className="flex flex-col gap-12 justify-center">
             <h1 className="font-bold text-2xl">BIOGRAPHY</h1>
             {profile.about.map((p) => (
-              <p key={p.slice(0, 24)} className="text-lg">
+              <p key={p.slice(0, 24)} className="text-lg text-white/90">
                 {p}
               </p>
             ))}
@@ -41,7 +41,7 @@ export default function AboutPage() {
             </motion.h1>
             <motion.div initial={{ x: "-300px" }} animate={skillsInView ? { x: 0 } : {}} transition={{ delay: 0.4 }} className="flex gap-4 flex-wrap">
               {skillChips.map((s) => (
-                <div key={s} className="rounded p-2 text-sm cursor-pointer bg-black text-white hover:bg-white hover:text-black">
+                <div key={s} className="rounded p-2 text-sm cursor-pointer bg-white text-black hover:bg-black hover:text-white">
                   {s}
                 </div>
               ))}
@@ -61,16 +61,16 @@ export default function AboutPage() {
                     <div className="bg-white p-3 rounded-b-lg rounded-s-lg">
                       <Image src={job.logo} alt={job.company} width={160} height={32} unoptimized className="h-8 w-full max-w-40 object-contain object-left" />
                     </div>
-                    <div className="p-3 text-sm italic">{job.summary}</div>
-                    <div className="p-3 text-red-400 text-sm font-semibold">{job.when}</div>
-                    <div className="p-1 rounded bg-white text-sm font-semibold w-fit">{job.role}</div>
+                    <div className="p-3 text-sm italic text-white/85">{job.summary}</div>
+                    <div className="p-3 text-red-300 text-sm font-semibold">{job.when}</div>
+                    <div className="p-1 rounded bg-white text-black text-sm font-semibold w-fit">{job.role}</div>
                   </div>
                 );
                 return (
                   <div className="flex justify-between min-h-48 pb-6" key={job.company}>
                     {i % 2 === 0 ? card : <div className="w-5/12" />}
                     <div className="w-1/6 flex justify-center">
-                      <div className="w-1 h-full bg-gray-600 rounded relative">
+                      <div className="w-1 h-full bg-white/40 rounded relative">
                         <div className="absolute w-5 h-5 rounded-full ring-4 ring-red-400 bg-white -left-2" />
                       </div>
                     </div>
@@ -88,14 +88,14 @@ export default function AboutPage() {
             </motion.h1>
             <motion.div initial={{ x: "-300px" }} animate={eduInView ? { x: 0 } : {}} transition={{ delay: 0.4 }} className="flex flex-col gap-6">
               {education.map((e) => (
-                <div key={e.school} className="bg-white/60 rounded-lg p-4 flex items-center gap-4">
+                <div key={e.school} className="bg-white/10 backdrop-blur-sm border border-white/15 rounded-lg p-4 flex items-center gap-4">
                   <div className="w-16 h-16 shrink-0 bg-white rounded-lg flex items-center justify-center p-2">
                     <Image src={e.logo} alt="" width={64} height={64} unoptimized className="max-h-12 w-auto object-contain" />
                   </div>
                   <div className="flex flex-col gap-1">
                     <div className="font-semibold">{e.school}</div>
-                    <div className="text-sm">{e.degree}</div>
-                    <div className="text-sm text-red-400 font-semibold">{e.when}</div>
+                    <div className="text-sm text-white/85">{e.degree}</div>
+                    <div className="text-sm text-red-300 font-semibold">{e.when}</div>
                   </div>
                 </div>
               ))}

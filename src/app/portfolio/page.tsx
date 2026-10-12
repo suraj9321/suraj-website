@@ -23,17 +23,17 @@ export default function PortfolioPage() {
           </div>
           <div className="sticky top-0 flex h-[calc(100vh-6rem)] gap-4 items-center overflow-hidden">
             <motion.div style={{ x }} className="flex">
-              <div className="h-[calc(100vh-6rem)] w-screen flex items-center justify-center bg-linear-to-r from-purple-300 to-red-300" />
+              <div className="h-[calc(100vh-6rem)] w-screen" />
               {portfolio.map((item) => (
-                <div className={`h-[calc(100vh-6rem)] w-screen flex items-center justify-center bg-linear-to-r ${item.color}`} key={item.title}>
-                  <div className="flex flex-col gap-6 text-white px-6 w-full max-w-xl md:max-w-2xl lg:max-w-3xl">
-                    <span className="text-sm md:text-base font-semibold uppercase tracking-wide opacity-80">{item.kind}</span>
-                    <h2 className="text-2xl font-bold md:text-4xl lg:text-5xl xl:text-6xl">{item.title}</h2>
-                    <p className="text-base md:text-lg lg:text-xl">{item.desc}</p>
-                    <p className="text-sm md:text-base opacity-80">{item.meta}</p>
+                <div className="h-[calc(100vh-6rem)] w-screen flex items-center justify-center px-4" key={item.title}>
+                  <div className="flex flex-col gap-5 md:gap-6 text-white p-6 md:p-10 w-full max-w-xl md:max-w-2xl lg:max-w-3xl rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-2xl">
+                    <span className="text-sm md:text-base font-semibold uppercase tracking-wide text-white/70">{item.kind}</span>
+                    <h2 className="text-2xl font-bold md:text-4xl lg:text-5xl">{item.title}</h2>
+                    <p className="text-base md:text-lg text-white/90">{item.desc}</p>
+                    <p className="text-sm md:text-base text-white/70">{item.meta}</p>
                     {item.href && (
                       <a href={item.href} target="_blank" rel="noreferrer" className="flex justify-end">
-                        <span className="p-2 text-sm md:p-4 md:text-base lg:p-6 lg:text-lg bg-white text-gray-600 font-semibold rounded">{item.cta}</span>
+                        <span className="p-3 text-sm md:p-4 md:text-base bg-white text-black font-semibold rounded">{item.cta}</span>
                       </a>
                     )}
                   </div>
@@ -50,13 +50,13 @@ export default function PortfolioPage() {
               <defs>
                 <path id="circlePath" d="M 150, 150 m -60, 0 a 60,60 0 0,1 120,0 a 60,60 0 0,1 -120,0" />
               </defs>
-              <text fill="#000">
+              <text fill="#fff">
                 <textPath href="#circlePath" className="text-lg">
                   Software Engineer · AI Agents ·
                 </textPath>
               </text>
             </motion.svg>
-            <Link href="/contact" className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-black text-white rounded-full flex items-center justify-center">
+            <Link href="/contact" className="w-16 h-16 md:w-28 md:h-28 absolute top-0 left-0 right-0 bottom-0 m-auto bg-white text-black rounded-full flex items-center justify-center">
               Hire me
             </Link>
           </div>

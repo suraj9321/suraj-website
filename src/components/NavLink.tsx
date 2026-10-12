@@ -8,7 +8,7 @@ export default function NavLink({ link }: { link: { url: string; title: string }
   const active = pathname === link.url;
 
   return (
-    <Link className={`rounded p-1 ${active ? "bg-black text-white" : ""}`} href={link.url}>
+    <Link className={`rounded p-1 ${active ? "bg-white text-black" : ""}`} href={link.url}>
       {link.title}
     </Link>
   );

@@ -5,8 +5,11 @@ body {
   height: 100%;
 }
 
+/* Night-sky photo (Ryan Kim, Unsplash) behind every page; the rocks sit at the bottom edge. */
 body {
   overflow: hidden;
+  background: #060a12 url("/assets/sky.webp") center bottom / cover no-repeat;
+  color: #fff;
 }
 
 /* Hide scrollbars inside the page-level scroll containers. */

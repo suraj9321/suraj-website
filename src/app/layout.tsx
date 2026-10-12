@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-linear-to-r from-blue-100 to-red-200 text-black`}>
+      <body className={`${inter.className} text-white`}>
         <TransitionProvider>{children}</TransitionProvider>
       </body>
     </html>

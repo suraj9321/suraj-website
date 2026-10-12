@@ -1,4 +1,4 @@
-const base = { width: 24, height: 24, viewBox: "0 0 24 24", fill: "currentColor", "aria-hidden": true } as const;
+const base = { width: 24, height: 24, viewBox: "0 0 24 24", fill: "currentColor", "aria-hidden": true, className: "shrink-0" } as const;
 
 export function GitHubIcon() {
   return (

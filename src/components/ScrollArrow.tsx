@@ -14,9 +14,9 @@ export default function ScrollArrow() {
       height={50}
       aria-hidden="true"
     >
-      <path d="M5 15a7 7 0 0 0 14 0V9A7 7 0 0 0 5 9v6Z" stroke="#000" strokeWidth={1} />
-      <path d="M12 6v8" stroke="#000" strokeWidth={1} />
-      <path d="m15 11-3 3-3-3" stroke="#000" strokeWidth={1} />
+      <path d="M5 15a7 7 0 0 0 14 0V9A7 7 0 0 0 5 9v6Z" stroke="#fff" strokeWidth={1} />
+      <path d="M12 6v8" stroke="#fff" strokeWidth={1} />
+      <path d="m15 11-3 3-3-3" stroke="#fff" strokeWidth={1} />
     </motion.svg>
   );
 }

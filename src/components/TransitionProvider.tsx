@@ -12,22 +12,22 @@ const pageNames: Record<string, string> = {
   "/contact": "contact",
 };
 
-// Black curtains close over the old page and open on the new one, with the
+// White curtains close over the old page and open on the new one, with the
 // page name flashed in between.
 export default function TransitionProvider({ children }: { children: ReactNode }) {
   const pathname = usePathname();
 
   return (
     <AnimatePresence mode="wait">
-      <div key={pathname} className="w-screen h-screen bg-linear-to-r from-blue-100 to-red-200">
+      <div key={pathname} className="w-screen h-screen bg-black/30">
         <motion.div
-          className="h-screen w-screen fixed bg-black rounded-b-[100px] z-40"
+          className="h-screen w-screen fixed bg-white rounded-b-[100px] z-40"
           animate={{ height: "0vh" }}
           exit={{ height: "140vh" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
         <motion.div
-          className="fixed m-auto top-0 left-0 right-0 bottom-0 text-white text-6xl md:text-8xl cursor-default w-fit h-fit z-50"
+          className="fixed m-auto top-0 left-0 right-0 bottom-0 text-black text-6xl md:text-8xl cursor-default w-fit h-fit z-50"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}
@@ -36,7 +36,7 @@ export default function TransitionProvider({ children }: { children: ReactNode }
           {pageNames[pathname] ?? pathname.slice(1)}
         </motion.div>
         <motion.div
-          className="h-screen w-screen fixed bg-black rounded-t-[100px] bottom-0 z-30"
+          className="h-screen w-screen fixed bg-white rounded-t-[100px] bottom-0 z-30"
           initial={{ height: "140vh" }}
           animate={{ height: "0vh", transition: { delay: 0.5 } }}
         />
