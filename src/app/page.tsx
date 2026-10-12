@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
-import { profile } from "@/content";
+import { profile, experience } from "@/content";
 
 export default function Homepage() {
   return (
@@ -33,6 +33,12 @@ export default function Homepage() {
             <Link href="/contact" className="p-4 rounded-lg ring-1 ring-black">
               Contact me
             </Link>
+          </div>
+          {/* Where I've worked */}
+          <div className="w-full hidden lg:flex items-center gap-8 pt-2">
+            {experience.map((job) => (
+              <Image key={job.company} src={job.logo} alt={job.company} width={112} height={32} unoptimized className="h-8 w-28 object-contain object-left opacity-80" />
+            ))}
           </div>
         </div>
       </div>

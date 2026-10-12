@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { motion, useInView, useScroll } from "motion/react";
 import Network from "@/components/Network";
 import ScrollArrow from "@/components/ScrollArrow";
@@ -57,7 +58,9 @@ export default function AboutPage() {
               {experience.map((job, i) => {
                 const card = (
                   <div className="w-5/12">
-                    <div className="bg-white p-3 font-semibold rounded-b-lg rounded-s-lg">{job.company}</div>
+                    <div className="bg-white p-3 rounded-b-lg rounded-s-lg">
+                      <Image src={job.logo} alt={job.company} width={160} height={32} unoptimized className="h-8 w-full max-w-40 object-contain object-left" />
+                    </div>
                     <div className="p-3 text-sm italic">{job.summary}</div>
                     <div className="p-3 text-red-400 text-sm font-semibold">{job.when}</div>
                     <div className="p-1 rounded bg-white text-sm font-semibold w-fit">{job.role}</div>
@@ -85,10 +88,15 @@ export default function AboutPage() {
             </motion.h1>
             <motion.div initial={{ x: "-300px" }} animate={eduInView ? { x: 0 } : {}} transition={{ delay: 0.4 }} className="flex flex-col gap-6">
               {education.map((e) => (
-                <div key={e.school} className="bg-white/60 rounded-lg p-4 flex flex-col gap-1">
-                  <div className="font-semibold">{e.school}</div>
-                  <div className="text-sm">{e.degree}</div>
-                  <div className="text-sm text-red-400 font-semibold">{e.when}</div>
+                <div key={e.school} className="bg-white/60 rounded-lg p-4 flex items-center gap-4">
+                  <div className="w-16 h-16 shrink-0 bg-white rounded-lg flex items-center justify-center p-2">
+                    <Image src={e.logo} alt="" width={64} height={64} unoptimized className="max-h-12 w-auto object-contain" />
+                  </div>
+                  <div className="flex flex-col gap-1">
+                    <div className="font-semibold">{e.school}</div>
+                    <div className="text-sm">{e.degree}</div>
+                    <div className="text-sm text-red-400 font-semibold">{e.when}</div>
+                  </div>
                 </div>
               ))}
             </motion.div>

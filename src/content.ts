@@ -1,9 +1,9 @@
 export const profile = {
   name: "Suraj Sah",
   headline: "Building systems that find the signal in the noise.",
-  lede: "Software engineer at Salesforce. Distributed systems, backend platforms, and — lately — AI agentic systems.",
+  lede: "Software engineer at Salesforce. Distributed systems, backend platforms, and lately AI agentic systems.",
   about: [
-    "At Salesforce I build messaging platforms on Customer 360: the tools marketers from small businesses to enterprises use to reach their audience. It is a front-row seat to how hard it is for brands to cut through the noise.",
+    "At Salesforce I built messaging platforms on Customer E360: the messaging channels marketers from small businesses to enterprises use to reach their audience. It is a front row seat to how hard it is for brands to cut through the noise.",
     "Before that, I worked on perception software for Rivian's self-driving stack, built secure financial APIs and microservices at Mastercard that serve more than 250 banks, and trained deep-learning models to classify aerospace patents at Airbus. Different industries, same job: find the signal in the data.",
     "Right now I'm building agentic AI systems, which I think are the next frontier of software.",
   ],
@@ -20,16 +20,19 @@ export type Job = {
   /** One line for the timeline card. */
   summary: string;
   bullets: string[];
+  /** Path under /public. */
+  logo: string;
 };
 
 export const experience: Job[] = [
   {
     company: "Salesforce",
+    logo: "/logos/salesforce.svg",
     role: "Software Development Engineer, Bellevue",
-    when: "Dec 2023 – present",
+    when: "Dec 2023 – June 2026",
     stack: "Java, Spring, JavaScript, Lightning Web Components",
     summary:
-      "Messaging platforms on Customer 360: Test Send APIs for Marketing Cloud Engagement, a polling layer that ended push-send timeouts, and the C2C developer page teams use to onboard messaging services.",
+      "Messaging platforms on Customer 360: building Salesforce Data Cloud integrated marketing channels like WhatsApp, Push Notification",
     bullets: [
       "Led the Test Send capability for Marketing Cloud Engagement's messaging APIs, wiring CreateSendDefinition, SendPush and GetSendStatus end to end.",
       "Replaced blocking Apex calls with a UI polling mechanism, eliminating timeouts on high-volume push sends.",
@@ -39,6 +42,7 @@ export const experience: Job[] = [
   },
   {
     company: "Rivian",
+    logo: "/logos/rivian.svg",
     role: "Software Development Engineer, Palo Alto",
     when: "Jan 2023 – Dec 2023",
     stack: "C++, Python, Bazel, CMake, Docker, Jenkins",
@@ -52,6 +56,7 @@ export const experience: Job[] = [
   },
   {
     company: "Mastercard",
+    logo: "/logos/mastercard.svg",
     role: "Software Development Engineer, India",
     when: "Jun 2019 – Aug 2021",
     stack: "Java, Spring Boot, Hibernate, Kafka, Oracle",
@@ -65,6 +70,7 @@ export const experience: Job[] = [
   },
   {
     company: "Airbus Engineering Centre",
+    logo: "/logos/airbus.svg",
     role: "Deep Learning Intern, India",
     when: "May – Jul 2018",
     stack: "Python, Keras",
@@ -149,8 +155,8 @@ export const skills: [string, string][] = [
 ];
 
 export const education = [
-  { school: "University at Buffalo, SUNY", degree: "MS, Computer Science", when: "2021 – 2022" },
-  { school: "IIT Kharagpur", degree: "B.Tech and M.Tech, Electrical Engineering", when: "2014 – 2019" },
+  { school: "University at Buffalo, SUNY", degree: "MS, Computer Science", when: "2021 – 2022", logo: "/logos/ub.svg" },
+  { school: "IIT Kharagpur", degree: "B.Tech and M.Tech, Electrical Engineering", when: "2014 – 2019", logo: "/logos/iitkgp.svg" },
 ];
 
 // Flat list for the skill chips on the About page.
