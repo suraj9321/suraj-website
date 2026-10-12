@@ -9,9 +9,9 @@ const hello = "Say Hello";
 export default function ContactPage() {
   return (
     <motion.div className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0vh" }} transition={{ duration: 1 }}>
-      <div className="h-full flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:gap-8">
+      <div className="h-full overflow-y-auto lg:overflow-hidden scroll-area flex flex-col lg:flex-row px-4 sm:px-8 md:px-12 lg:px-20 xl:px-48 lg:gap-8">
         {/* Text */}
-        <div className="h-1/3 lg:h-full lg:w-1/2 flex items-center justify-center text-5xl md:text-6xl lg:text-7xl">
+        <div className="min-h-[30dvh] lg:min-h-0 lg:h-full lg:w-1/2 flex items-center justify-center text-5xl md:text-6xl lg:text-7xl">
           <div>
             {hello.split("").map((letter, i) => (
               <motion.span key={i} initial={{ opacity: 1 }} animate={{ opacity: 0 }} transition={{ duration: 3, repeat: Infinity, delay: i * 0.1 }}>

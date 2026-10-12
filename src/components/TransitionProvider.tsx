@@ -19,15 +19,16 @@ export default function TransitionProvider({ children }: { children: ReactNode }
 
   return (
     <AnimatePresence mode="wait">
-      <div key={pathname} className="w-screen h-screen bg-black/30">
+      <div key={pathname} className="w-screen h-dvh bg-black/30">
         <motion.div
-          className="h-screen w-screen fixed bg-white rounded-b-[100px] z-40"
+          className="h-dvh w-screen fixed bg-white rounded-b-[100px] z-40 pointer-events-none"
           animate={{ height: "0vh" }}
           exit={{ height: "140vh" }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         />
+        {/* pointer-events-none: this stays in the DOM at opacity 0 and must not swallow taps. */}
         <motion.div
-          className="fixed m-auto top-0 left-0 right-0 bottom-0 text-black text-6xl md:text-8xl cursor-default w-fit h-fit z-50"
+          className="fixed m-auto top-0 left-0 right-0 bottom-0 text-black text-6xl md:text-8xl cursor-default w-fit h-fit z-50 pointer-events-none"
           initial={{ opacity: 1 }}
           animate={{ opacity: 0 }}
           exit={{ opacity: 0 }}
@@ -36,14 +37,14 @@ export default function TransitionProvider({ children }: { children: ReactNode }
           {pageNames[pathname] ?? pathname.slice(1)}
         </motion.div>
         <motion.div
-          className="h-screen w-screen fixed bg-white rounded-t-[100px] bottom-0 z-30"
+          className="h-dvh w-screen fixed bg-white rounded-t-[100px] bottom-0 z-30 pointer-events-none"
           initial={{ height: "140vh" }}
           animate={{ height: "0vh", transition: { delay: 0.5 } }}
         />
         <div className="h-24">
           <Navbar />
         </div>
-        <div className="h-[calc(100vh-6rem)]">{children}</div>
+        <div className="h-[calc(100dvh-6rem)]">{children}</div>
       </div>
     </AnimatePresence>
   );

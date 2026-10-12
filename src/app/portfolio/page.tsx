@@ -18,14 +18,14 @@ export default function PortfolioPage() {
     <motion.div className="h-full" initial={{ y: "-200vh" }} animate={{ y: "0vh" }} transition={{ duration: 1 }}>
       <div className="h-full overflow-scroll scroll-area" ref={containerRef}>
         <div className="relative" style={{ height: `${panels * 100}vh` }} ref={ref}>
-          <div className="w-screen h-[calc(100vh-6rem)] flex items-center justify-center text-6xl md:text-8xl text-center">
+          <div className="w-screen h-[calc(100dvh-6rem)] flex items-center justify-center text-6xl md:text-8xl text-center">
             My Works
           </div>
-          <div className="sticky top-0 flex h-[calc(100vh-6rem)] gap-4 items-center overflow-hidden">
+          <div className="sticky top-0 flex h-[calc(100dvh-6rem)] gap-4 items-center overflow-hidden">
             <motion.div style={{ x }} className="flex">
-              <div className="h-[calc(100vh-6rem)] w-screen" />
+              <div className="h-[calc(100dvh-6rem)] w-screen" />
               {portfolio.map((item) => (
-                <div className="h-[calc(100vh-6rem)] w-screen flex items-center justify-center px-4" key={item.title}>
+                <div className="h-[calc(100dvh-6rem)] w-screen flex items-center justify-center px-4" key={item.title}>
                   <div className="flex flex-col gap-5 md:gap-6 text-white p-6 md:p-10 w-full max-w-xl md:max-w-2xl lg:max-w-3xl rounded-2xl bg-white/10 backdrop-blur-md border border-white/15 shadow-2xl">
                     <span className="text-sm md:text-base font-semibold uppercase tracking-wide text-white/70">{item.kind}</span>
                     <h2 className="text-2xl font-bold md:text-4xl lg:text-5xl">{item.title}</h2>
@@ -43,7 +43,7 @@ export default function PortfolioPage() {
           </div>
         </div>
 
-        <div className="w-screen h-[calc(100vh-6rem)] flex flex-col gap-12 md:gap-16 items-center justify-center text-center px-4">
+        <div className="w-screen h-[calc(100dvh-6rem)] flex flex-col gap-12 md:gap-16 items-center justify-center text-center px-4">
           <h1 className="text-5xl md:text-8xl">Do you have a project?</h1>
           <div className="relative">
             <motion.svg animate={{ rotate: 360 }} transition={{ duration: 10, ease: "linear", repeat: Infinity }} viewBox="0 0 300 300" className="w-64 h-64 md:w-[500px] md:h-[500px]">
