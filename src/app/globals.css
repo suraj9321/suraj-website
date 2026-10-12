@@ -226,6 +226,15 @@ h1 {
 .meta { color: var(--steel); font-size: 15px; white-space: nowrap; }
 .projects p { margin: 6px 0 0; color: color-mix(in srgb, var(--ink) 84%, var(--paper)); }
 
+.points { list-style: none; margin-top: 10px; }
+.points li { position: relative; padding-left: 18px; margin-bottom: 6px; color: color-mix(in srgb, var(--ink) 84%, var(--paper)); }
+.points li::before { content: "–"; position: absolute; left: 0; color: var(--steel); }
+
+/* Patents */
+.patents { list-style: none; }
+.patents .stack { margin: 6px 0 8px; }
+.patents p:last-child { margin: 0; color: color-mix(in srgb, var(--ink) 84%, var(--paper)); }
+
 /* Skills */
 .skills { display: grid; grid-template-columns: 110px minmax(0, 1fr); gap: 8px 20px; margin: 0; }
 .skills dt { color: var(--steel); }

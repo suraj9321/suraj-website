@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import Timeline from "@/components/Timeline";
 import Projects from "@/components/Projects";
 import Portrait from "@/components/Portrait";
-import { profile, skills, education } from "@/content";
+import { profile, skills, education, patents } from "@/content";
 
 export default function Home() {
   return (
@@ -42,6 +42,26 @@ export default function Home() {
       <section className="section" id="experience">
         <h2>Experience</h2>
         <Timeline />
+      </section>
+
+      <section className="section" id="patents">
+        <h2>Patents</h2>
+        <ul className="patents">
+          {patents.map((pt) => (
+            <Reveal key={pt.number} as="li">
+              <div className="proj-head">
+                <h3>
+                  <a href={pt.href}>{pt.title}</a>
+                </h3>
+                <span className="meta">{pt.number}</span>
+              </div>
+              <p className="stack">
+                {pt.assignee}, {pt.when}
+              </p>
+              <p>{pt.blurb}</p>
+            </Reveal>
+          ))}
+        </ul>
       </section>
 
       <section className="section" id="projects">

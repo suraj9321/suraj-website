@@ -11,6 +11,13 @@ export default function Projects() {
             <span className="meta">{p.meta}</span>
           </div>
           <p>{p.blurb}</p>
+          {p.points && (
+            <ul className="points">
+              {p.points.map((pt) => (
+                <li key={pt.slice(0, 32)}>{pt}</li>
+              ))}
+            </ul>
+          )}
         </Reveal>
       ))}
     </ul>

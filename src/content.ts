@@ -71,21 +71,23 @@ export type Project = {
   meta: string;
   href?: string;
   blurb: string;
+  points?: string[];
 };
 
 export const projects: Project[] = [
   {
-    title: "Nifty options backtesting framework",
-    meta: "Python",
+    title: "Options data pipeline and volatility analytics framework",
+    meta: "Python, DuckDB, Parquet, GARCH, LLM coding agents",
     href: "https://github.com/suraj9321/dhan-api-backtest-options-framework",
     blurb:
-      "End-to-end quant research stack for systematic Nifty option selling: an event-driven backtester, volatility and variance-risk-premium signals, and a DhanHQ market-data pipeline.",
-  },
-  {
-    title: "Momentum weekly investing",
-    meta: "Java",
-    href: "https://github.com/suraj9321/MomentumWeeklyInvesting",
-    blurb: "Selects a portfolio of stocks showing price momentum and rebalances it at the end of every week.",
+      "A reproducible, leakage-safe data platform for Nifty options research, built end to end with AI coding agents.",
+    points: [
+      "Resumable, idempotent pipeline that ingested about 39.4 million minute-level option-chain bars (five years, weekly and monthly expiries) from the DhanHQ API, caching every raw response by request identity so multi-hour pulls resume where they stopped.",
+      "A 40M-row columnar store in partitioned Parquet, sorted for row-group pruning and queried in place with DuckDB, with no ETL or import step.",
+      "Append-only enrichment layer adding per-bar Greeks and implied volatility over all 39M bars, using Black-76 on a put-call-parity-implied forward.",
+      "GARCH, EWMA and HAR-RV realized-volatility forecasts and a variance-risk-premium signal, kept honest by expanding-window refits and a T-1 signal wall so nothing can see same-day data, the same discipline trustworthy train/eval splits need.",
+      "An AI-agent-ready codebase: reusable agent skills for Claude Code and Cursor plus a structured knowledge vault that acts as retrieval context for LLM agents, with CI running a data-free test suite on every push.",
+    ],
   },
   {
     title: "Distributed protocols in Go",
@@ -105,12 +107,26 @@ export const projects: Project[] = [
     blurb:
       "Benchmarked symmetric and asymmetric ciphers, then exploited a buffer overflow on a non-executable stack by chaining into libc's system().",
   },
+];
+
+export type Patent = {
+  title: string;
+  number: string;
+  when: string;
+  assignee: string;
+  href: string;
+  blurb: string;
+};
+
+export const patents: Patent[] = [
   {
-    title: "Patent: secure card-based transactions",
-    meta: "US20210383358A1",
+    title: "Method and system for facilitating secure card-based transactions",
+    number: "US 2021/0383358 A1",
+    when: "Filed January 2020",
+    assignee: "Mastercard",
     href: "https://patents.google.com/patent/US20210383358A1",
     blurb:
-      "A transaction card with an embedded piezoelectric chip that only allows data exchange with a terminal when a deliberate tap produces a pulse above threshold.",
+      "A transaction card with an embedded piezoelectric chip that senses a deliberate tap and generates an electrical pulse. Processing circuitry exchanges data with the terminal only when that pulse exceeds a threshold, so a card cannot be read without the holder's intent.",
   },
 ];
 
@@ -128,6 +144,7 @@ export const education = [
 
 export const sections = [
   { id: "experience", label: "Experience" },
+  { id: "patents", label: "Patents" },
   { id: "projects", label: "Projects" },
   { id: "skills", label: "Skills" },
   { id: "education", label: "Education" },
