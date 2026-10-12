@@ -93,6 +93,19 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "DocsQA: an evaluated RAG agent for the DhanHQ trading API",
+    meta: "Python, LangGraph, Qdrant, BM25, FastAPI, Llama 3.3 70B via OpenRouter",
+    href: "https://github.com/suraj9321/dhan-developer-tradingAPI-docQA-agent",
+    blurb:
+      "A documentation assistant that answers with cited passages or an explicit \"I don't know\", built around an evaluation harness that measures every design decision on the same 170-question set with confidence intervals.",
+    points: [
+      "Hybrid retrieval (BM25 + dense vectors, reciprocal rank fusion) lifted answer correctness from 0.860 to 0.913 and fixed every cross-API disambiguation miss, at $0.19 per thousand questions.",
+      "LangGraph agent that grades evidence, rewrites weak queries, verifies citations and abstains when unsupported; a calibrated verifier kept 20/20 refusals on unanswerable questions after a strict first version regressed correctness by 14 points.",
+      "Long context as a control: the whole 110K-token doc in one prompt was 32 points less correct, fabricated answers to every unanswerable question and cost about 100x more per query.",
+      "LLM judge validated against reference labels (97.5% agreement, kappa 0.89), leakage-free eval/train split by section, and paired bootstrap CIs so null results like embedder fine-tuning are reported as such.",
+    ],
+  },
+  {
     title: "Options data pipeline and volatility analytics framework",
     meta: "Python, DuckDB, Parquet, GARCH, LLM coding agents",
     href: "https://github.com/suraj9321/dhan-api-backtest-options-framework",
