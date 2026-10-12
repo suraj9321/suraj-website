@@ -1,4 +1,4 @@
-# suraj-kgp-ub.vercel.app
+# surajsah.com
 
 Personal site for Suraj Sah. Next.js (App Router) + [motion](https://motion.dev).
 

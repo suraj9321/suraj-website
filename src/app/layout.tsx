@@ -7,7 +7,7 @@ import { profile } from "@/content";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://suraj-kgp-ub.vercel.app"),
+  metadataBase: new URL("https://surajsah.com"),
   title: profile.name,
   description:
     "Suraj Sah — software engineer at Salesforce. Distributed systems, backend platforms, and AI agentic systems. Previously Rivian, Mastercard, Airbus.",
